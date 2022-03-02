@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 0;
+}
+
+#grey-filter {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background-color: #282a2d;
+    opacity: 0;
+    z-index: -1;
+    transition: all ease 100ms ;
+}
+#grey-filter.grey-filter-active {
+    z-index: 1;
+    opacity: .6;
+}
+
+/* GRID CONTAINING ALL CARDS */
+
+.poke-grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 232px);
+    grid-gap: 1rem;
+    justify-content: center;
+}
+
+/* SINGLE POKE CARD */
+
+.poke-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    background-color: red;
+    border: 5px black solid;
+    border-radius: 5px;
+    transition: all ease-in 200ms;
+    height: max-content;
+}
+
+/* CARD CONTENTS */
+
+img {
+    background-color: lightgrey;
+    box-shadow: 0 0 5px 2px #282a2d, inset 0 0 5px 2px #282a2d;
+}
+
+.poke-info-container {
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+    color: white;
+    text-shadow: 4px 4px 5px black;
+}
+
+.poke-description {
+    color: white;
+    font-size: 1.2rem;
+    opacity: 1;
+    display: none;
+    transition: opacity ease-in 200ms ;
+}
+.target-card {
+    transition: all ease 200ms;
+    height: max-content;
+    z-index: 1;
+}
+
+.target-card:hover {
+    transform: scale(1.1);
+    transform: translateY(-30px)
+}
+
